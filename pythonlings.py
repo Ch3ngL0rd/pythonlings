@@ -1,6 +1,7 @@
 from rich.console import Console
 from rich.table import Table
 
+# TODO: add generate all combinations, generate all subsets, all permutations
 #       I would get so good at them,
 #       that solving a simple binary search
 #       feels as easy as writing a for loop
@@ -11,14 +12,12 @@ from rich.table import Table
 # Arrays:
 #   Two pointers
 #       Valid Palindrome (easy)
-#       Container with most water (medium)
 #   Stack
 #       Valid Parentheses (easy)
 #   Binary Search
 #       Binary Search (easy)
 #   Sliding Window
 #       Best time to buy and sell stock (easy)
-#       Longest Substring Without Repeating Characters (medium)
 
 # Linked List:
 #       Create a linked list class
@@ -52,15 +51,6 @@ class Pythonlings:
                 # Implement logic to check if a string is a valid palindrome
                 pass
 
-            # https://leetcode.com/problems/container-with-most-water/
-            # Example:
-            #   [1, 2, 3, 4, 5] -> 6 : 3->5 has a width of 2 and height of 3
-            #   [1, 8, 6, 2, 5, 4, 8, 3, 7] -> 49 : 2->7 has a width of 7 and height of 7
-            # Return the max volume of water that can be contained
-            @staticmethod
-            def container_with_most_water(array) -> int:
-                # Implement logic to find the container with most water
-                pass
 
         class Stack:
             # https://leetcode.com/problems/valid-parentheses/
@@ -97,17 +87,6 @@ class Pythonlings:
                 # Implement logic to find the best time to buy and sell stock
                 pass
 
-            # https://leetcode.com/problems/longest-substring-without-repeating-characters/
-            # Example:
-            #   abcabcbb -> 3 : abc
-            #   bbbbb -> 1 : b
-            #   pwwkew -> 3 : wke
-            # Return the length of the longest substring without repeating characters
-            @staticmethod
-            def longest_substring_without_repeating_characters(string) -> int:
-                # Implement logic to find the longest substring without repeating characters
-                pass
-
     @classmethod
     def test_algorithms(cls):
         # Tests all the algorithms
@@ -124,16 +103,6 @@ class Pythonlings:
                        True, cls.Arrays.TwoPointers.valid_palindrome("bab")])
         results.append(["Two Pointers: Valid Palindrome", "",
                        True, cls.Arrays.TwoPointers.valid_palindrome("")])
-
-        # Tests for container with most water
-        results.append(["Two Pointers: Container with most water", [
-                       1, 2, 3, 4, 5], 6, cls.Arrays.TwoPointers.container_with_most_water([1, 2, 3, 4, 5])])
-        results.append(["Two Pointers: Container with most water", [1, 8, 6, 2, 5, 4, 8, 3, 7],
-                       49, cls.Arrays.TwoPointers.container_with_most_water([1, 8, 6, 2, 5, 4, 8, 3, 7])])
-        results.append(["Two Pointers: Container with most water", [
-                       1, 1], 1, cls.Arrays.TwoPointers.container_with_most_water([1, 1])])
-        results.append(["Two Pointers: Container with most water", [
-                       4, 3, 2, 1, 4], 16, cls.Arrays.TwoPointers.container_with_most_water([4, 3, 2, 1, 4])])
 
         # Stack
         # Tests for valid parentheses
@@ -171,19 +140,6 @@ class Pythonlings:
                        2, 4, 1], 2, cls.Arrays.SlidingWindow.best_time_to_buy_and_sell_stock([2, 4, 1])])
         results.append(["Sliding Window: Best Time to Buy and Sell Stock", [
                        3, 2, 6, 5, 0, 3], 4, cls.Arrays.SlidingWindow.best_time_to_buy_and_sell_stock([3, 2, 6, 5, 0, 3])])
-
-        # Tests for longest substring without repeating characters
-        results.append(["Sliding Window: Longest Substring Without Repeating Characters", "abcabcbb",
-                       3, cls.Arrays.SlidingWindow.longest_substring_without_repeating_characters("abcabcbb")])
-        results.append(["Sliding Window: Longest Substring Without Repeating Characters", "bbbbb",
-                       1, cls.Arrays.SlidingWindow.longest_substring_without_repeating_characters("bbbbb")])
-        results.append(["Sliding Window: Longest Substring Without Repeating Characters", "pwwkew",
-                       3, cls.Arrays.SlidingWindow.longest_substring_without_repeating_characters("pwwkew")])
-        results.append(["Sliding Window: Longest Substring Without Repeating Characters", "",
-                       0, cls.Arrays.SlidingWindow.longest_substring_without_repeating_characters("")])
-        results.append(["Sliding Window: Longest Substring Without Repeating Characters", " ",
-                       1, cls.Arrays.SlidingWindow.longest_substring_without_repeating_characters(" ")])
-
         cls.print_results(results)
 
     @staticmethod
